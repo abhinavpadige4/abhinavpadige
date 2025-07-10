@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from 'emailjs-com';
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,15 +15,31 @@ const Contact = () => {
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Here you would typically send the form data to a backend service
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    await emailjs.send(
+      'service_eg5efu9',     // e.g., 'service_123abc'
+      'template_u9cakid',    // e.g., 'template_xyz'
+      formData,
+      'nhoeAq9OQ1AhSp5Dp'      // Not the secret key
+    );
+
     toast({
       title: "Message Sent!",
       description: "Thank you for your message. I'll get back to you soon!",
     });
     setFormData({ name: '', email: '', message: '' });
-  };
+  } catch (error) {
+    console.error(error);
+    toast({
+      title: "Error",
+      description: "Failed to send message. Please try again.",
+    });
+  }
+};
+
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
