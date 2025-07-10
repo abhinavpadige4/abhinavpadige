@@ -1,73 +1,90 @@
-# Welcome to your Lovable project
+# 👋 Hi there, I'm Abhinav Padige!
 
-## Project info
+Welcome to my GitHub! I'm a **Full-Stack Developer**, **AI/ML Enthusiast**, and the **Founder of Do Freelancing With Us**, where I lead real-world freelance projects across web development, automation, and AI domains.
 
-**URL**: https://lovable.dev/projects/f973f826-ea43-4435-ac6a-95f7268b7c65
+---
 
-## How can I edit this code?
+## 🚀 About Me
 
-There are several ways of editing your application.
+🎓 **Education:**
+- **B.Tech in Computer Science & Data Science** — CVR College of Engineering, Hyderabad (2023)
+- **B.Sc. in Data Science** — IIT Madras (2022)
 
-**Use Lovable**
+👨‍💻 **What I Do:**
+- Build full-stack applications using **React, Spring Boot, Flask, and Django**
+- Create intelligent systems with **Keras, OpenCV, TensorFlow, and ML pipelines**
+- Architect DevOps pipelines with **Docker, Jenkins, CI/CD, and Kubernetes**
+- Drive real impact through client-focused freelance projects and business platforms
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f973f826-ea43-4435-ac6a-95f7268b7c65) and start prompting.
+📌 **Current Focus:**
+- Scaling [**Do Freelancing With Us**](https://dofreelancingwithus.vercel.app)
+- Building products with real-world AI integrations
+- Mentoring juniors and collaborating on impactful tech solutions
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🧠 Skills Snapshot
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+**Languages & Frameworks:**  
+`Java` `Python` `C` `JavaScript` `React.js` `Next.js` `Spring Boot` `Django` `Flask` `Tailwind CSS`
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+**AI/ML & Data Science:**  
+`TensorFlow` `Keras` `OpenCV` `Pandas` `NumPy` `Machine Learning` `Computer Vision` `SQL` `MySQL`
 
-Follow these steps:
+**BI & Visualization:**  
+`Power BI` `Tableau` `Matplotlib` `Seaborn`
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+**DevOps & Cloud:**  
+`Docker` `Jenkins` `GitHub Actions` `Kubernetes` `Microservices` `CI/CD`
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+**Project & Agile Tools:**  
+`JIRA` `Scrum` `Stakeholder Communication` `Requirement Analysis`
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 🔧 Projects
 
-**Edit a file directly in GitHub**
+### 🎧 [Mood-Based Playlist Generator](https://github.com/abhinavpadige06/mood-playlist-generator)
+> Full-stack ML-based music player that uses facial emotion and text sentiment analysis to recommend songs in real-time.
+- React, Flask, Spring Boot, OpenCV, Keras, MySQL
+- 95%+ emotion prediction accuracy with DL model
+- YouTube integration with ad-free playback experience
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 🍨 [Screamium Ice Creams](https://github.com/abhinavpadige06/screamium)
+> Scalable eCommerce platform for an ice cream brand, designed for performance and user engagement.
+- Django, Bootstrap, Redis, HTML/CSS
+- Mobile-first responsive UI with 25% boost in conversions
+- Redis caching: reduced load time by 40%
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 💼 Experience
 
-## What technologies are used for this project?
+### 🧑‍💼 Founder @ [Do Freelancing With Us](https://dofreelancingwithus.vercel.app/)
+> Hyderabad | 2025–Present  
+- Delivered 5+ real-world client projects (Web + AI/ML + Automation)
+- Achieved 200% revenue growth and 95%+ client satisfaction
+- Mentored junior developers, improved code quality by 35%
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🏆 Leadership & Awards
 
-## How can I deploy this project?
+- 🚀 Executive Member – **Innovation Club & IIC**, CVR College (2025)  
+- 🌍 Presented at **NASA Space Settlement Conference**, USA  
+- 🥇 Top 50 – **JNTUH Innovation Challenge 2024**
 
-Simply open [Lovable](https://lovable.dev/projects/f973f826-ea43-4435-ac6a-95f7268b7c65) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## 📫 Let's Connect!
 
-Yes, you can!
+- 📧 **abhinav.padige@gmail.com**
+- 🌐 [LinkedIn](https://www.linkedin.com/in/abhinavpadige/)
+- 🐙 [GitHub](https://github.com/abhinavpadige06)
+- 🌍 [DoFreelancingWithUs](https://dofreelancingwithus.vercel.app)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### 🙌 Thanks for visiting my profile!
+
+I’m always open to collaboration, freelance projects, and tech discussions—feel free to reach out!
