@@ -15,8 +15,8 @@ const Projects = () => {
         "Ensured a distraction-free listening experience by embedding YouTube videos using a custom iframe approach, enabling 100% ad-free playback."
       ],
       links: {
-        github: "#",
-        demo: "#"
+        github: "https://github.com/dofreelancingwithus/Sync_MB",
+        demo: "https://sync-mb.vercel.app/"
       }
     },
     {
@@ -30,8 +30,8 @@ const Projects = () => {
         "Executed a complete mobile-first UI redesign using Bootstrap, leading to a 25% increase in mobile user conversions and overall retention."
       ],
       links: {
-        github: "#",
-        demo: "#"
+        github: "https://github.com/dofreelancingwithus/Screamium",
+        demo: "https://screamium.pythonanywhere.com/"
       }
     }
   ];

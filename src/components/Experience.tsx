@@ -9,8 +9,8 @@ const Experience = () => {
       location: "Hyderabad",
       period: "2025-Present",
       links: {
-        github: "#",
-        demo: "#"
+        github: "https://github.com/dofreelancingwithus/dofreelancingwithus",
+        demo: "https://dofreelancingwithus.vercel.app/"
       },
       achievements: [
         "Spearheaded the development and scaling of a freelancing platform, resulting in a 200% revenue growth through the successful delivery of 5+ diverse client projects across web development, AI, and automation domains.",

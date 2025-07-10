@@ -13,7 +13,7 @@ const Leadership = () => {
       icon: Trophy,
       title: "NASA Space Settlement Project",
       organization: "NASA Conference, USA",
-      year: "2024",
+      year: "2020",
       description: "Led a 9-member team for NASA Space Settlement Project and presented at NASA Conference, USA"
     },
     {
