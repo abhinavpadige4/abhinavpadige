@@ -72,25 +72,25 @@ const Skills = () => {
               viewport={{ once: true }}
               className="group bg-card/30 backdrop-blur-sm rounded-xl p-6 border border-border/30 hover:border-border transition-all duration-500"
             >
-              <h3 className="text-xl font-semibold text-foreground mb-6 pb-2 border-b border-border/30">
+              <h3 className="text-lg font-semibold text-foreground mb-5 pb-2 border-b border-border/30">
                 {category.title}
               </h3>
               
-              <div className="grid grid-cols-5 gap-4">
+              <div className="grid grid-cols-5 gap-3">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skillIndex}
-                    whileHover={{ scale: 1.1, y: -5 }}
-                    className="flex flex-col items-center gap-2 group/skill cursor-pointer"
+                    whileHover={{ scale: 1.1, y: -3 }}
+                    className="flex flex-col items-center gap-1.5 group/skill cursor-pointer"
                   >
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 p-2 bg-muted/30 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 p-1.5 bg-muted/30 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
                       <img 
                         src={skill.icon} 
                         alt={skill.name}
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <span className="text-xs text-muted-foreground group-hover/skill:text-foreground transition-colors text-center">
+                    <span className="text-[10px] sm:text-xs text-muted-foreground group-hover/skill:text-foreground transition-colors text-center leading-tight">
                       {skill.name}
                     </span>
                   </motion.div>
@@ -108,12 +108,12 @@ const Skills = () => {
           viewport={{ once: true }}
           className="mt-8 bg-card/30 backdrop-blur-sm rounded-xl p-6 border border-border/30"
         >
-          <h3 className="text-xl font-semibold text-foreground mb-4">Project Management & Delivery</h3>
-          <div className="flex flex-wrap gap-3">
+          <h3 className="text-lg font-semibold text-foreground mb-4">Project Management & Delivery</h3>
+          <div className="flex flex-wrap gap-2">
             {['Agile & Scrum', 'Sprint Planning', 'Requirement Analysis', 'Stakeholder Communication', 'JIRA', 'Risk Management', 'SDLC'].map((skill, index) => (
               <span 
                 key={index}
-                className="px-4 py-2 bg-muted/30 text-muted-foreground rounded-full text-sm border border-border/30 hover:border-border hover:text-foreground transition-all duration-300"
+                className="px-3 py-1.5 bg-muted/30 text-muted-foreground rounded-full text-xs border border-border/30 hover:border-border hover:text-foreground transition-all duration-300"
               >
                 {skill}
               </span>
