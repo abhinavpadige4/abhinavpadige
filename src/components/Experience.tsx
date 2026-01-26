@@ -1,114 +1,93 @@
-import { Calendar, MapPin, ExternalLink } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Briefcase, ExternalLink } from 'lucide-react';
+import { motion } from 'motion/react';
 
 const Experience = () => {
   const experiences = [
     {
       position: "Founder",
-      company: "dofreelancingwithus",
+      company: "Dofreelancingwithus",
       location: "Hyderabad",
-      period: "2025-Present",
+      period: "2025 - Present",
       links: {
-        github: "https://github.com/dofreelancingwithus/dofreelancingwithus",
-        demo: "https://dofreelancingwithus.vercel.app/"
+        website: "https://dofreelancingwithus.vercel.app/"
       },
       achievements: [
-        "Spearheaded the development and scaling of a freelancing platform, resulting in a 200% revenue growth through the successful delivery of 5+ diverse client projects across web development, AI, and automation domains.",
-        "Directed comprehensive end-to-end client management, including requirement analysis, proposal drafting, iterative feedback cycles, and final delivery—leading to a 95%+ client satisfaction rate.",
-        "Conceptualized, designed, and deployed 3+ professional-grade portfolio and business websites, contributing to a 30% boost in client digital engagement and lead generation.",
-        "Implemented agile project management using JIRA with bi-weekly sprint cycles, reducing project delays by 40% and enhancing delivery timelines.",
-        "Provided mentorship and hands-on support to 4 junior developers, leading to a 35% improvement in code quality and consistency through rigorous code reviews and best practice implementation."
-      ]
-    },
-    {
-      position: "Data Science Intern (Virtual)",
-      company: "Altair – Data Science Master Internship",
-      location: "Remote",
-      period: "2025",
-      achievements: [
-        "Completed a 10-week structured internship, covering 10+ core modules in data science and machine learning, including supervised/unsupervised learning, model deployment, and data visualization."
+        "Founded a freelance software agency delivering 3+ production-grade applications across web and AI domains.",
+        "Led end-to-end delivery for 5+ client features, from requirement analysis to deployment.",
+        "Guided a 4-member development team and managed multiple deployments, improving delivery efficiency by 30%+."
       ]
     }
   ];
 
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Professional <span className="text-primary">Experience</span>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
+            Work Experience
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Building impactful solutions and leading teams in the tech industry
+            Building impactful solutions and leading development teams
           </p>
-        </div>
+        </motion.div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 md:transform md:-translate-x-0.5 top-0 bottom-0 w-0.5 bg-primary/30"></div>
-
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div 
-                key={index}
-                className={`relative flex items-start ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-4 md:left-1/2 md:transform md:-translate-x-1/2 w-3 h-3 bg-primary rounded-full border-4 border-background z-10"></div>
-
-                {/* Content */}
-                <div className={`ml-12 md:ml-0 md:w-1/2 ${
-                  index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
-                }`}>
-                  <div className="bg-card rounded-xl p-6 shadow-sm border border-border hover:shadow-md transition-shadow duration-300">
-                    <div className="mb-4">
-                      <h3 className="text-xl font-bold text-primary">{exp.position}</h3>
-                      <h4 className="text-lg font-semibold text-foreground">{exp.company}</h4>
-                      
-                      <div className="flex flex-wrap items-center gap-4 mt-2 text-sm text-muted-foreground">
-                        <div className="flex items-center gap-1">
-                          <Calendar className="w-4 h-4" />
-                          {exp.period}
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          {exp.location}
-                        </div>
-                      </div>
-
-                      {exp.links && (
-                        <div className="flex gap-2 mt-3">
-                          <Button variant="outline" size="sm" asChild>
-                            <a href={exp.links.github} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="w-3 h-3 mr-1" />
-                              GitHub
-                            </a>
-                          </Button>
-                          <Button variant="outline" size="sm" asChild>
-                            <a href={exp.links.demo} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="w-3 h-3 mr-1" />
-                              Live Demo
-                            </a>
-                          </Button>
-                        </div>
-                      )}
-                    </div>
-
-                    <ul className="space-y-2">
-                      {exp.achievements.map((achievement, achIndex) => (
-                        <li key={achIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <span className="text-primary font-bold mt-1">•</span>
-                          <span>{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
+        <div className="max-w-4xl mx-auto">
+          {experiences.map((exp, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="relative pl-8 border-l-2 border-border/30 hover:border-border transition-colors duration-300"
+            >
+              {/* Timeline dot */}
+              <div className="absolute left-0 top-0 w-4 h-4 -translate-x-[9px] rounded-full bg-foreground border-4 border-background"></div>
+              
+              <div className="bg-card/30 backdrop-blur-sm rounded-xl p-6 border border-border/30 hover:border-border transition-all duration-300 mb-8">
+                <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
+                      <Briefcase className="w-5 h-5" />
+                      {exp.position}
+                    </h3>
+                    <p className="text-muted-foreground">{exp.company} | {exp.location}</p>
                   </div>
+                  <span className="text-sm text-muted-foreground border border-border/50 px-3 py-1 rounded-full">
+                    {exp.period}
+                  </span>
                 </div>
+
+                {/* Links */}
+                <div className="flex gap-3 mb-4">
+                  <a 
+                    href={exp.links.website} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Website
+                  </a>
+                </div>
+
+                <ul className="space-y-2">
+                  {exp.achievements.map((achievement, achIndex) => (
+                    <li key={achIndex} className="flex items-start gap-2 text-muted-foreground">
+                      <span className="text-foreground/50 mt-1.5">•</span>
+                      <span>{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

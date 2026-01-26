@@ -11,11 +11,10 @@ const Projects = () => {
       highlights: [
         "Designed a secure doctor–patient consultation platform integrating real-time chat, video, and AI-driven mental health assessment.",
         "Enables clinicians to receive automated insights and risk indicators, reducing manual assessment time.",
-        "AI-assisted mental health tools are projected to grow at >25% CAGR.",
         "Future scope includes multimodal emotion fusion and predictive relapse detection."
       ],
       links: {
-        github: "https://github.com/abhinavpadige4",
+        github: "https://github.com/abhinavpadige4/mindcare",
         demo: null
       }
     },
@@ -26,11 +25,10 @@ const Projects = () => {
       highlights: [
         "Developed an autonomous AI agent to generate, execute, and summarize web test cases.",
         "Implemented using Python, Playwright, and LLM-based orchestration.",
-        "Improves regression testing efficiency in CI workflows.",
         "AI-driven test automation can reduce QA costs by 40–60%."
       ],
       links: {
-        github: "https://github.com/abhinavpadige4",
+        github: "https://github.com/abhinavpadige4/ai_agent_infosys",
         demo: null
       }
     },
@@ -41,11 +39,10 @@ const Projects = () => {
       highlights: [
         "Built a full-stack application that recommends music using real-time emotion detection.",
         "Achieved 75%+ emotion detection accuracy through facial recognition and text sentiment analysis.",
-        "Emotion-aware systems increase engagement by 30%+.",
         "Future scope includes voice-based emotion analysis and Spotify integration."
       ],
       links: {
-        github: "https://github.com/dofreelancingwithus/Sync_MB",
+        github: "https://github.com/abhinavpadige4/mood_playlist",
         demo: "https://sync-mb.vercel.app/"
       }
     },
@@ -56,7 +53,6 @@ const Projects = () => {
       highlights: [
         "Developed a student marketplace for buying and selling academic resources.",
         "Enabled real-time listings and secure peer-to-peer transactions.",
-        "Platforms reduce academic costs by 40–50%.",
         "Future enhancements include AI-based pricing and fraud detection."
       ],
       links: {

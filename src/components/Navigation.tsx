@@ -1,72 +1,90 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#leadership', label: 'Leadership' },
-    { href: '#education', label: 'Education' },
-    { href: '#contact', label: 'Contact' },
+    { name: 'Home', href: '#' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Education', href: '#education' },
+    { name: 'Contact', href: '#contact' },
   ];
 
+  const scrollToSection = (href: string) => {
+    setIsOpen(false);
+    if (href === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.querySelector(href);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <nav className="fixed top-4 left-4 right-4 z-50 bg-background/20 backdrop-blur-md border border-border/30 rounded-2xl mx-auto max-w-6xl animate-fade-in">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-3">
-            <img src="/lovable-uploads/3854074e-1b5f-4671-96ef-f5e5b45c9375.png" alt="Abhinav Padige" className="w-8 h-8 rounded-full ring-2 ring-primary/30" />
-            <span className="text-xl font-bold text-primary">Abhinav Padige</span>
-          </div>
+    <nav className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[95%] max-w-5xl ${
+      scrolled 
+        ? 'bg-background/80 backdrop-blur-xl border border-border/50 shadow-lg' 
+        : 'bg-background/40 backdrop-blur-md border border-border/20'
+    } rounded-full px-6 py-3`}>
+      <div className="flex items-center justify-between">
+        {/* Name */}
+        <button 
+          onClick={() => scrollToSection('#')}
+          className="font-bold text-foreground text-lg hover:text-foreground/80 transition-colors"
+        >
+          AP
+        </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-foreground hover:text-primary transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsOpen(!isOpen)}
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-1">
+          {navItems.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => scrollToSection(item.href)}
+              className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 rounded-full hover:bg-muted/30"
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </Button>
-          </div>
+              {item.name}
+            </button>
+          ))}
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden border-t border-border">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="block px-3 py-2 text-foreground hover:text-primary hover:bg-muted/50 rounded-md transition-all duration-300 hover:translate-x-2"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden p-2 text-foreground hover:bg-muted/30 rounded-full transition-colors"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
       </div>
+
+      {/* Mobile Navigation */}
+      {isOpen && (
+        <div className="md:hidden mt-4 pb-4 border-t border-border/30 pt-4">
+          <div className="flex flex-col gap-2">
+            {navItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => scrollToSection(item.href)}
+                className="px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/30 rounded-lg transition-all duration-300 text-left"
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
