@@ -14,17 +14,13 @@ const vertexShaderSource = `
 `;
 
 const fragmentShaderSource = `
-  precision highp float;
+  precision mediump float;
   
   uniform float iTime;
   uniform vec2 iResolution;
   
-  #define EPS 0.001
-  #define PI 3.14159265359
-  #define RADIAN 180.0 / PI
-  #define SPEED 25.0
-  
-  float hash(in float n) { return fract(sin(n)*43758.5453123); }
+  #define EPS 0.002
+  #define SPEED 15.0
   
   float hash2(vec2 p) {
     return fract(sin(dot(p,vec2(127.1,311.7))) * 43758.5453123);
@@ -41,20 +37,14 @@ const fragmentShaderSource = `
   }
   
   float fbm(in vec2 p) {
-    return .5000 * noise(p)
-         + .2500 * noise(p * 2.)
-         + .1250 * noise(p * 4.)
-         + .0625 * noise(p * 8.);
+    return .5 * noise(p) + .25 * noise(p * 2.) + .125 * noise(p * 4.);
   }
   
   float dst(vec3 p) {
-    return dot(vec3(p.x, p.y
-                    + 0.45 * fbm(p.zx) 
-                    + 2.55 * noise(.1 * p.xz) 
-                    + 0.83 * noise(.4 * p.xz)
-                    + 3.33 * noise(.001 * p.xz)
-                    + 3.59 * noise(.0005 * (p.xz + 132.453)) 
-                    , p.z),  vec3(0.,1.,0.));	
+    return p.y + 0.5 * fbm(p.zx * 0.5) 
+              + 2.0 * noise(0.1 * p.xz) 
+              + 0.8 * noise(0.4 * p.xz)
+              + 3.0 * noise(0.001 * p.xz);
   }
   
   vec3 nrm(vec3 p, float d) {
@@ -64,66 +54,59 @@ const fragmentShaderSource = `
              dst(vec3(p.x, p.y, p.z + EPS))) - d);
   }
   
-  bool rmarch(vec3 ro, vec3 rd, out vec3 p, out vec3 n) {
-    p = ro;
-    vec3 pos = p;
-    float d = 1.;
-    for (int i = 0; i < 64; i++) {
-      d = dst(pos);
-      if (d < EPS) {
-        p = pos;
-        break;
-      }
-      pos += d * rd;
-    }
-    n = nrm(p, d);
-    return d < EPS;
-  }
-  
-  vec4 render(vec2 uv) {
-    float t = iTime;
-    vec2 uvn = (uv) * vec2(iResolution.x / iResolution.y, 1.);
-    float vel = SPEED * t;
-    
-    vec3 cu = vec3(2. * noise(vec2(.3 * t)) - 1.,1., 1. * fbm(vec2(.8 * t)));
-    vec3 cp = vec3(0, 3.1 + noise(vec2(t)) * 3.1, vel);
-    vec3 ct = vec3(1.5 * sin(t), 
-           -2. + cos(t) + fbm(cp.xz) * .4, 13. + vel);
-      
-    vec3 ro = cp,
-       rd = normalize(vec3(uvn, 1. / tan(60. * RADIAN)));
-    
-    vec3 cd = ct - cp,
-       rz = normalize(cd),
-       rx = normalize(cross(rz, cu)),
-       ry = normalize(cross(rx, rz));
-    rd = normalize(mat3(rx, ry, rz) * rd);
-    
-    vec3 sp, sn;
-    vec3 col = (rmarch(ro, rd, sp, sn) ?
-        vec3(.6) * dot(sn, normalize(vec3(cp.x, cp.y + .5, cp.z) - sp))
-      : vec3(0.));
-    
-    return vec4(col, length(ro-sp));
-  }
-  
   void main() {
     vec2 fragCoord = gl_FragCoord.xy;
-    vec2 uv = fragCoord.xy / iResolution.xy * 2. - 1.;
+    vec2 uv = fragCoord.xy / iResolution.xy * 2.0 - 1.0;
     
-    if (abs(EPS + uv.y) >= .7) { 
+    // Letterbox effect
+    if (abs(uv.y) >= 0.7) { 
       gl_FragColor = vec4(0,0,0,1);
       return;
     }
     
-    vec4 res = render(uv);
-    vec3 col = res.xyz;
+    float t = iTime * 0.3;
+    vec2 uvn = uv * vec2(iResolution.x / iResolution.y, 1.0);
+    float vel = SPEED * t;
     
-    col *= 1.75 * smoothstep(length(uv) * .35, .75, .4);
-    float n = hash((hash2(uv) + uv.y) * iTime) * .15;
-    col += n;
-    col *= smoothstep(EPS, 3.5, iTime);
-    gl_FragColor = vec4(col, 1);
+    vec3 cp = vec3(0.0, 4.0 + noise(vec2(t)) * 2.0, vel);
+    vec3 ct = vec3(sin(t) * 0.5, -1.0, 10.0 + vel);
+    
+    vec3 ro = cp;
+    vec3 rd = normalize(vec3(uvn, 1.5));
+    
+    vec3 cd = ct - cp;
+    vec3 rz = normalize(cd);
+    vec3 rx = normalize(cross(rz, vec3(0.0, 1.0, 0.0)));
+    vec3 ry = normalize(cross(rx, rz));
+    rd = normalize(mat3(rx, ry, rz) * rd);
+    
+    // Simple raymarching with fewer iterations
+    vec3 pos = ro;
+    float d = 1.0;
+    for (int i = 0; i < 32; i++) {
+      d = dst(pos);
+      if (d < EPS) break;
+      pos += d * rd * 1.2;
+    }
+    
+    vec3 col = vec3(0.0);
+    if (d < EPS) {
+      vec3 n = nrm(pos, d);
+      vec3 lightDir = normalize(vec3(cp.x, cp.y + 2.0, cp.z) - pos);
+      col = vec3(0.6) * max(0.0, dot(n, lightDir));
+    }
+    
+    // Vignette
+    col *= 1.5 * smoothstep(length(uv) * 0.4, 0.8, 0.5);
+    
+    // Film grain
+    float grain = hash2(uv + fract(iTime)) * 0.1;
+    col += grain;
+    
+    // Fade in
+    col *= smoothstep(0.0, 2.0, iTime);
+    
+    gl_FragColor = vec4(col, 1.0);
   }
 `;
 
@@ -137,9 +120,10 @@ export const TerrainShader: React.FC<TerrainShaderProps> = ({ className }) => {
     if (!canvas) return;
 
     const gl = canvas.getContext("webgl", { 
-      antialias: true,
+      antialias: false,
       alpha: false,
-      preserveDrawingBuffer: false
+      preserveDrawingBuffer: false,
+      powerPreference: "high-performance"
     });
     
     if (!gl) {
@@ -147,7 +131,6 @@ export const TerrainShader: React.FC<TerrainShaderProps> = ({ className }) => {
       return;
     }
 
-    // Compile shaders
     const compileShader = (source: string, type: number) => {
       const shader = gl.createShader(type);
       if (!shader) return null;
@@ -166,7 +149,6 @@ export const TerrainShader: React.FC<TerrainShaderProps> = ({ className }) => {
     
     if (!vertexShader || !fragmentShader) return;
 
-    // Create program
     const program = gl.createProgram();
     if (!program) return;
     
@@ -181,14 +163,7 @@ export const TerrainShader: React.FC<TerrainShaderProps> = ({ className }) => {
 
     gl.useProgram(program);
 
-    // Create fullscreen quad
-    const positions = new Float32Array([
-      -1, -1,
-       1, -1,
-      -1,  1,
-       1,  1,
-    ]);
-
+    const positions = new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]);
     const buffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
     gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
@@ -197,15 +172,15 @@ export const TerrainShader: React.FC<TerrainShaderProps> = ({ className }) => {
     gl.enableVertexAttribArray(positionLocation);
     gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
 
-    // Get uniform locations
     const timeLocation = gl.getUniformLocation(program, "iTime");
     const resolutionLocation = gl.getUniformLocation(program, "iResolution");
 
-    // Handle resize
     const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio, 2);
-      const width = canvas.clientWidth * dpr;
-      const height = canvas.clientHeight * dpr;
+      // Lower resolution for better performance
+      const dpr = Math.min(window.devicePixelRatio, 1.5);
+      const scale = 0.5; // Render at half resolution
+      const width = Math.floor(canvas.clientWidth * dpr * scale);
+      const height = Math.floor(canvas.clientHeight * dpr * scale);
       
       if (canvas.width !== width || canvas.height !== height) {
         canvas.width = width;
@@ -219,14 +194,20 @@ export const TerrainShader: React.FC<TerrainShaderProps> = ({ className }) => {
     resize();
 
     startTimeRef.current = performance.now();
+    let lastTime = 0;
 
-    // Animation loop
-    const render = () => {
-      const currentTime = (performance.now() - startTimeRef.current) / 1000;
+    const render = (currentTime: number) => {
+      // Throttle to ~30fps for smoother experience
+      if (currentTime - lastTime < 33) {
+        animationRef.current = requestAnimationFrame(render);
+        return;
+      }
+      lastTime = currentTime;
       
-      gl.uniform1f(timeLocation, currentTime);
+      const time = (performance.now() - startTimeRef.current) / 1000;
+      
+      gl.uniform1f(timeLocation, time);
       gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
-      
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
       
       animationRef.current = requestAnimationFrame(render);
@@ -235,9 +216,7 @@ export const TerrainShader: React.FC<TerrainShaderProps> = ({ className }) => {
     animationRef.current = requestAnimationFrame(render);
 
     return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
       resizeObserver.disconnect();
       gl.deleteProgram(program);
       gl.deleteShader(vertexShader);
@@ -250,7 +229,7 @@ export const TerrainShader: React.FC<TerrainShaderProps> = ({ className }) => {
     <canvas
       ref={canvasRef}
       className={cn("absolute inset-0 w-full h-full", className)}
-      style={{ display: "block" }}
+      style={{ display: "block", imageRendering: "auto" }}
     />
   );
 };
