@@ -7,7 +7,7 @@ const Hero = () => {
     <BackgroundLines className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background profile image */}
       <div 
-        className="absolute inset-0 z-0 opacity-10"
+        className="absolute inset-0 z-0 opacity-[0.75]"
         style={{
           backgroundImage: `url(${profileHero})`,
           backgroundSize: 'cover',
