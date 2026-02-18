@@ -10,8 +10,8 @@ const Hero = () => {
         className="absolute inset-0 z-0 opacity-[0.75]"
         style={{
           backgroundImage: `url(${profileHero})`,
-          backgroundSize: '60%',
-          backgroundPosition: 'center top',
+          backgroundSize: 'contain',
+          backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat',
           filter: 'blur(0.5px)',
         }}
