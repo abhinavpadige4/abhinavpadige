@@ -10,9 +10,10 @@ const Hero = () => {
         className="absolute inset-0 z-0 opacity-[0.75]"
         style={{
           backgroundImage: `url(${profileHero})`,
-          backgroundSize: 'cover',
+          backgroundSize: '60%',
           backgroundPosition: 'center top',
-          filter: 'blur(2px)',
+          backgroundRepeat: 'no-repeat',
+          filter: 'blur(0.5px)',
         }}
       />
       <div className="relative z-10 text-center">
