@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import profileLogo from '@/assets/profile-hero.png';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,12 +40,12 @@ const Navigation = () => {
         : 'bg-background/40 backdrop-blur-md border border-border/20'
     } rounded-full px-6 py-3`}>
       <div className="flex items-center justify-between">
-        {/* Name */}
+        {/* Logo */}
         <button 
           onClick={() => scrollToSection('#')}
-          className="font-bold text-foreground text-lg hover:text-foreground/80 transition-colors"
+          className="flex items-center gap-2 hover:opacity-80 transition-opacity"
         >
-          AP
+          <img src={profileLogo} alt="AP" className="w-8 h-8 rounded-full object-cover object-top" />
         </button>
 
         {/* Desktop Navigation */}
