@@ -1,35 +1,46 @@
-import { BackgroundLines } from '@/components/ui/background-lines';
 import { EncryptedText } from '@/components/ui/encrypted-text';
-import profileHero from '@/assets/profile-hero.png';
+import MacWindow from '@/components/MacWindow';
 
 const Hero = () => {
   return (
-    <BackgroundLines className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background profile image */}
-      <div 
-        className="absolute inset-0 z-0 opacity-[0.75]"
-        style={{
-          backgroundImage: `url(${profileHero})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center top',
-          filter: 'blur(2px)',
-        }}
-      />
-      <div className="relative z-10 text-center">
-        <h1 
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-wider"
-          style={{ fontFamily: "'Orbitron', sans-serif" }}
-        >
-          <EncryptedText 
-            text="Abhinav Padige" 
-            className="text-foreground"
-            revealDelayMs={100}
-            encryptedClassName="text-muted-foreground/30"
-            revealedClassName="text-foreground"
-          />
-        </h1>
+    <section className="min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-5xl">
+        <MacWindow title="~ / abhinav-padige — zsh" bodyClassName="p-8 sm:p-14">
+          <div className="text-center space-y-6">
+            <p className="text-sm sm:text-base text-muted-foreground font-mono">
+              <span className="text-[hsl(142,70%,45%)]">$</span> whoami
+            </p>
+            <h1
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-wider"
+              style={{ fontFamily: "'Orbitron', sans-serif" }}
+            >
+              <EncryptedText
+                text="Abhinav Padige"
+                className="text-foreground"
+                revealDelayMs={100}
+                encryptedClassName="text-muted-foreground/30"
+                revealedClassName="text-foreground"
+              />
+            </h1>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+              <span className="font-mono text-foreground/80">[ </span>
+              full-stack developer · backend engineer · AI engineer
+              <span className="font-mono text-foreground/80"> ]</span>
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+              {['Development', 'Systems', 'AI Products', 'Architecture'].map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 rounded-md bg-muted/60 border border-border text-xs sm:text-sm text-foreground/80 font-mono"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </MacWindow>
       </div>
-    </BackgroundLines>
+    </section>
   );
 };
 
