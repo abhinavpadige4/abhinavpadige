@@ -22,11 +22,6 @@ const Hero = () => {
                 revealedClassName="text-foreground"
               />
             </h1>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-              <span className="font-mono text-foreground/80">[ </span>
-              full-stack developer · backend engineer · AI engineer
-              <span className="font-mono text-foreground/80"> ]</span>
-            </p>
             <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
               {['Development', 'Systems', 'AI Products', 'Architecture'].map((tag) => (
                 <span
