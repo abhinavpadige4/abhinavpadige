@@ -24,7 +24,7 @@
     --input: 0 0% 90%;
     --ring: 0 0% 10%;
     --radius: 0.5rem;
-    --grid-line: 0 0% 0% / 0.06;
+    --grid-line: 0 0% 0% / 0.12;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -55,7 +55,7 @@
     --border: 0 0% 20%;
     --input: 0 0% 20%;
     --ring: 0 0% 80%;
-    --grid-line: 0 0% 100% / 0.06;
+    --grid-line: 0 0% 100% / 0.08;
     --sidebar-background: 0 0% 10%;
     --sidebar-foreground: 0 0% 95%;
     --sidebar-primary: 0 0% 95%;
@@ -74,11 +74,19 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Space Grotesk', sans-serif;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
     background-image:
       linear-gradient(to right, hsla(var(--grid-line)) 1px, transparent 1px),
       linear-gradient(to bottom, hsla(var(--grid-line)) 1px, transparent 1px);
-    background-size: 48px 48px;
+    background-size: 56px 56px;
   }
+  #root { position: relative; z-index: 1; }
   html {
     scroll-behavior: smooth;
   }
