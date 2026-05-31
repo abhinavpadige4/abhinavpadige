@@ -19,7 +19,7 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Navigation />
       <main>
         <Hero />
