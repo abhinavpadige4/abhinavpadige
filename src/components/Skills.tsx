@@ -42,6 +42,16 @@ const Skills = () => {
         { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
       ]
     },
+    {
+      title: "Generative AI",
+      skills: [
+        { name: "LangChain", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+        { name: "OpenAI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg" },
+        { name: "Groq", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+        { name: "HuggingFace", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+        { name: "RAG", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      ]
+    },
   ];
 
   return (
@@ -108,9 +118,9 @@ const Skills = () => {
           viewport={{ once: true }}
           className="mt-8 bg-card/30 backdrop-blur-sm rounded-xl p-6 border border-border/30"
         >
-          <h3 className="text-lg font-semibold text-foreground mb-4">Project Management & Delivery</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-4">Generative AI & Project Delivery</h3>
           <div className="flex flex-wrap gap-2">
-            {['Agile & Scrum', 'Sprint Planning', 'Requirement Analysis', 'Stakeholder Communication', 'JIRA', 'Risk Management', 'SDLC'].map((skill, index) => (
+            {['LLM Orchestration', 'Prompt Engineering', 'RAG Pipelines', 'Vector DBs', 'Agentic Workflows', 'Fine-tuning', 'Multimodal Fusion', 'Agile & Scrum', 'JIRA', 'SDLC'].map((skill, index) => (
               <span 
                 key={index}
                 className="px-3 py-1.5 bg-muted/30 text-muted-foreground rounded-full text-xs border border-border/30 hover:border-border hover:text-foreground transition-all duration-300"

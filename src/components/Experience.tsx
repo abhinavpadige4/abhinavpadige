@@ -4,6 +4,20 @@ import { motion } from 'motion/react';
 const Experience = () => {
   const experiences = [
     {
+      position: "Software Engineering Virtual Intern",
+      company: "Infosys Springboard",
+      location: "Remote",
+      period: "Dec 2025 - Feb 2026",
+      links: {
+        website: "https://github.com/abhinavpadige4/ai_agent_infosys"
+      },
+      achievements: [
+        "Built an autonomous AI Web Testing Agent using LangChain-based LLM orchestration as part of Infosys Virtual Internship Program.",
+        "Automated end-to-end web test case generation, execution, and result summarization from natural language input, cutting manual QA effort significantly.",
+        "Designed an LLM orchestration pipeline for intelligent test planning, browser interaction, and structured result reporting."
+      ]
+    },
+    {
       position: "Founder",
       company: "Dofreelancingwithus",
       location: "Hyderabad",

@@ -5,13 +5,15 @@ import { motion } from 'motion/react';
 const Projects = () => {
   const projects = [
     {
-      title: "Multi-Modal Mental Health Assessment",
-      status: "Ongoing",
-      techStack: ["Spring Boot", "Flask", "Supabase", "JWT", "WebSockets", "LLM"],
+      title: "MindCareX – Multi-Modal Mental Health Assessment",
+      status: "2026",
+      techStack: ["Spring Boot", "WebRTC", "STOMP", "JWT", "ViT", "Groq LLaMA-3", "PostgreSQL", "MongoDB"],
       highlights: [
-        "Designed a secure doctor–patient consultation platform integrating real-time chat, video, and AI-driven mental health assessment.",
-        "Enables clinicians to receive automated insights and risk indicators, reducing manual assessment time.",
-        "Future scope includes multimodal emotion fusion and predictive relapse detection."
+        "Architected a production-grade 5-service microservices system with WebRTC p2p encrypted video, STOMP WebSocket real-time chat, and JWT authentication.",
+        "Implemented a real-time voice stress analysis pipeline: MediaRecorder audio capture, broadcasting results to a dashboard in <100ms via WebSocket.",
+        "Developed facial expression recognition using Hugging Face Vision Transformer (ViT) with weighted multimodal fusion (55% voice + 45% face), achieving 83.7% agreement with human clinical annotations across 4 risk levels.",
+        "Engineered an NLP WhatsApp chat analyzer (VADER + TextBlob) processing 5000 messages in 0.41s, auto-generating structured clinical reports via Groq LLaMA-3 70B in under 14s.",
+        "Deployed on Render (Docker) + Vercel CDN + Neon PostgreSQL + MongoDB Atlas; all 18 system test cases passed."
       ],
       links: {
         github: "https://github.com/abhinavpadige4/mindcare",

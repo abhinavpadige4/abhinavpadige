@@ -11,8 +11,8 @@ const Hero = () => {
               <span className="text-[hsl(142,70%,45%)]">$</span> whoami
             </p>
             <h1
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-wider"
-              style={{ fontFamily: "'Orbitron', sans-serif" }}
+              className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl italic tracking-tight"
+              style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
             >
               <EncryptedText
                 text="Abhinav Padige"
