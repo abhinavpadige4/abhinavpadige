@@ -1,9 +1,11 @@
 import { EncryptedText } from '@/components/ui/encrypted-text';
 import MacWindow from '@/components/MacWindow';
+import IDCard from '@/components/IDCard';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8">
+    <section className="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8">
+      <IDCard />
       <div className="w-full max-w-5xl">
         <MacWindow title="~ / abhinav-padige — zsh" bodyClassName="p-8 sm:p-14">
           <div className="text-center space-y-6">
