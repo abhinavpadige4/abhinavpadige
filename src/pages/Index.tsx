@@ -8,7 +8,6 @@ import Education from '@/components/Education';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import MacWindow from '@/components/MacWindow';
-import IDCard from '@/components/IDCard';
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -22,7 +21,6 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <IDCard />
       <main>
         <Hero />
         <Section title="skills.app">
