@@ -21,20 +21,6 @@ const Projects = () => {
       }
     },
     {
-      title: "AI WebTest Agent",
-      status: "Ongoing",
-      techStack: ["Python", "Playwright", "LLM", "CI/CD"],
-      highlights: [
-        "Developed an autonomous AI agent to generate, execute, and summarize web test cases.",
-        "Implemented using Python, Playwright, and LLM-based orchestration.",
-        "AI-driven test automation can reduce QA costs by 40–60%."
-      ],
-      links: {
-        github: "https://github.com/abhinavpadige4/ai_agent_infosys",
-        demo: null
-      }
-    },
-    {
       title: "Mood-Based Playlist Generator",
       status: "2025",
       techStack: ["React", "Flask", "Spring Boot", "OpenCV", "Keras", "MySQL"],
