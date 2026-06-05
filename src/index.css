@@ -73,8 +73,12 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
     font-family: 'Instrument Serif', serif;
     font-weight: 400;
+    letter-spacing: -0.01em;
   }
   body::before {
     content: '';

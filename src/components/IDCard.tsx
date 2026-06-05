@@ -1,9 +1,13 @@
-import { motion } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import mydp from '@/assets/mydp.jpg.asset.json';
 
 const IDCard = () => {
+  const { scrollY } = useScroll();
+  const rotate = useTransform(scrollY, [0, 400], [0, 18]);
+  const y = useTransform(scrollY, [0, 400], [0, 60]);
+
   return (
-    <div className="pointer-events-none absolute top-0 left-2 sm:left-4 lg:left-6 z-20 hidden lg:block scale-90 origin-top-left">
+    <div className="pointer-events-none absolute top-0 left-2 sm:left-4 z-20 hidden md:block scale-90 origin-top-left">
       {/* Strap */}
       <div className="relative mx-auto w-[8px] h-24 bg-gradient-to-b from-foreground/80 to-foreground/60 rounded-b-sm shadow-md" />
       {/* Clip */}
@@ -11,10 +15,9 @@ const IDCard = () => {
 
       <motion.div
         className="origin-top mt-1"
-        initial={{ rotate: -8 }}
-        animate={{ rotate: [-6, 6, -6] }}
+        animate={{ rotate: [-4, 4, -4] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-        style={{ transformOrigin: '50% -16px' }}
+        style={{ transformOrigin: '50% -16px', rotate, y }}
       >
         <div className="w-40 rounded-2xl bg-neutral-900 text-neutral-100 border border-neutral-800 shadow-2xl overflow-hidden">
           <div className="px-4 pt-4">
