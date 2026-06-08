@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'motion/react';
-import mydp from '@/assets/mydp.jpg.asset.json';
+import mydp from '@/assets/mydp.jpg';
 
 const IDCard = () => {
   const { scrollY } = useScroll();
@@ -41,7 +41,7 @@ const IDCard = () => {
           <div className="flex justify-center pt-3 pb-4">
             <div className="w-20 h-20 rounded-full bg-neutral-800 border-2 border-neutral-700 overflow-hidden">
               <img
-                src={mydp.url}
+                src={mydp}
                 alt="Abhinav Padige"
                 className="w-full h-full object-cover"
               />
