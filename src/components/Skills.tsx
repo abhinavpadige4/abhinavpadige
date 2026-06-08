@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import openaiLogo from '@/assets/openai.svg';
 
 const Skills = () => {
   const skillCategories = [
