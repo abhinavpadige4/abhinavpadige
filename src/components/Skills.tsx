@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import openaiLogo from '@/assets/openai.svg';
 
 const Skills = () => {
   const skillCategories = [
@@ -46,7 +47,7 @@ const Skills = () => {
       title: "Generative AI",
       skills: [
         { name: "LangChain", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-        { name: "OpenAI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg" },
+        { name: "OpenAI", icon: openaiLogo },
         { name: "Groq", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
         { name: "HuggingFace", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
         { name: "RAG", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
