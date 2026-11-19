@@ -1,0 +1,4 @@
+- [ ] Rework the portfolio into a compact dark, icon-dock layout inspired by mrraj.dev, using Abhinav's details.
+- [ ] Add the supplied portrait, Dofreelancingwithus mark, and project/experience links.
+- [ ] Add the supplied Cal.com booking experience and profile/social links; keep LeetCode pending its URL.
+- [ ] Verify desktop/mobile rendering, navigation, booking entry point, metadata, and current build diagnostics.
