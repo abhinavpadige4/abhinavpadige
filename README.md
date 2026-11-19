@@ -1,90 +1,67 @@
-# 👋 Hi there, I'm Abhinav Padige!
+# Hey, I'm Abhinav Padige 👋
 
-Welcome to my GitHub! I'm a **Full-Stack Developer**, **AI/ML Enthusiast**, and the **Founder of Do Freelancing With Us**, where I lead real-world freelance projects across web development, automation, and AI domains.
+AI Engineer | Generative AI | Agentic AI | B.Tech CSE (Data Science)
 
----
+Building intelligent applications with LLMs, RAG, multi-agent systems, and scalable backend architectures.
 
-## 🚀 About Me
-
-🎓 **Education:**
-- **B.Tech in Computer Science & Data Science** — CVR College of Engineering, Hyderabad (2023)
-- **B.Sc. in Data Science** — IIT Madras (2022)
-
-👨‍💻 **What I Do:**
-- Build full-stack applications using **React, Spring Boot, Flask, and Django**
-- Create intelligent systems with **Keras, OpenCV, TensorFlow, and ML pipelines**
-- Architect DevOps pipelines with **Docker, Jenkins, CI/CD, and Kubernetes**
-- Drive real impact through client-focused freelance projects and business platforms
-
-📌 **Current Focus:**
-- Scaling [**Do Freelancing With Us**](https://dofreelancingwithus.vercel.app)
-- Building products with real-world AI integrations
-- Mentoring juniors and collaborating on impactful tech solutions
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Abhinav_Padige-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](YOUR_LINKEDIN_URL)
+[![Gmail](https://img.shields.io/badge/Gmail-Contact_Me-C14438?style=flat-square&logo=gmail&logoColor=white)](mailto:YOUR_EMAIL)
+[![GitHub](https://img.shields.io/badge/GitHub-abhinavpadige4-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/abhinavpadige4)
 
 ---
 
-## 🧠 Skills Snapshot
+### Works
 
-**Languages & Frameworks:**  
-`Java` `Python` `C` `JavaScript` `React.js` `Next.js` `Spring Boot` `Django` `Flask` `Tailwind CSS`
+**Projects**
 
-**AI/ML & Data Science:**  
-`TensorFlow` `Keras` `OpenCV` `Pandas` `NumPy` `Machine Learning` `Computer Vision` `SQL` `MySQL`
+1. [**Nurovers / AMOS**](https://github.com/abhinavpadige4/amos): Building an agentic multi-agent orchestration system with specialized agents for planning, research, coding, memory, and tool execution. Focused on reliable AI workflows, state management, and harness engineering.
 
-**BI & Visualization:**  
-`Power BI` `Tableau` `Matplotlib` `Seaborn`
+2. [**SmartGrid AI**](https://github.com/abhinavpadige4/smart-v1): Developed an intelligent energy analytics platform processing 167M+ smart-meter readings. Combines XGBoost, LightGBM, anomaly detection, and Hybrid RAG with Vector Search and Text-to-SQL.
 
-**DevOps & Cloud:**  
-`Docker` `Jenkins` `GitHub Actions` `Kubernetes` `Microservices` `CI/CD`
+3. [**Brand Guardian AI**](https://github.com/abhinavpadige4/azure-brand-ads): Building a multimodal video compliance system using Azure AI Video Indexer, Azure OpenAI, LangGraph, and Azure AI Search for automated regulatory analysis.
 
-**Project & Agile Tools:**  
-`JIRA` `Scrum` `Stakeholder Communication` `Requirement Analysis`
+4. **Synaptix AI**: Enterprise knowledge intelligence platform combining RAG, LangGraph, Amazon Bedrock, Pinecone, and AWS infrastructure for document-based question answering.
 
----
+**Internships**
 
-## 🔧 Projects
+1. **Celebal Technologies**: Selected as a Celebal Excellence Intern (2026), gaining experience in enterprise AI engineering and development.
 
-### 🎧 [Mood-Based Playlist Generator](https://github.com/abhinavpadige06/mood-playlist-generator)
-> Full-stack ML-based music player that uses facial emotion and text sentiment analysis to recommend songs in real-time.
-- React, Flask, Spring Boot, OpenCV, Keras, MySQL
-- 95%+ emotion prediction accuracy with DL model
-- YouTube integration with ad-free playback experience
-
-### 🍨 [Screamium Ice Creams](https://github.com/abhinavpadige06/screamium)
-> Scalable eCommerce platform for an ice cream brand, designed for performance and user engagement.
-- Django, Bootstrap, Redis, HTML/CSS
-- Mobile-first responsive UI with 25% boost in conversions
-- Redis caching: reduced load time by 40%
+2. **Infosys Springboard**: Worked on an AI-powered website testing agent using LangGraph, Playwright, Flask, and LLM-based natural language instruction parsing.
 
 ---
 
-## 💼 Experience
+### Technologies
 
-### 🧑‍💼 Founder @ [Do Freelancing With Us](https://dofreelancingwithus.vercel.app/)
-> Hyderabad | 2025–Present  
-- Delivered 5+ real-world client projects (Web + AI/ML + Automation)
-- Achieved 200% revenue growth and 95%+ client satisfaction
-- Mentored junior developers, improved code quality by 35%
+**Languages:** Python, Java, JavaScript, C, SQL
 
----
+**AI / Machine Learning:** LangChain, LangGraph, RAG, LLMs, Hugging Face, PyTorch, TensorFlow, Scikit-learn
 
-## 🏆 Leadership & Awards
+**Backend & Frameworks:** FastAPI, Spring Boot, Flask, Django, Node.js, React
 
-- 🚀 Executive Member – **Innovation Club & IIC**, CVR College (2025)  
-- 🌍 Presented at **NASA Space Settlement Conference**, USA  
-- 🥇 Top 50 – **JNTUH Innovation Challenge 2024**
+**Cloud & DevOps:** AWS, Microsoft Azure, Docker, Git, GitHub Actions, CI/CD
+
+**Databases & Search:** PostgreSQL, MySQL, MongoDB, Redis, Pinecone, Qdrant
+
+**Tools:** Kafka, Linux, GitHub, Postman
 
 ---
 
-## 📫 Let's Connect!
+### Currently Exploring
 
-- 📧 **abhinav.padige@gmail.com**
-- 🌐 [LinkedIn](https://www.linkedin.com/in/abhinavpadige/)
-- 🐙 [GitHub](https://github.com/abhinavpadige06)
-- 🌍 [DoFreelancingWithUs](https://dofreelancingwithus.vercel.app)
+- Agentic AI and Multi-Agent Orchestration
+- AI Harness Engineering
+- Advanced RAG and Retrieval Evaluation
+- LLM Evaluation and Optimization
+- Distributed Systems and Cloud Architecture
 
 ---
 
-### 🙌 Thanks for visiting my profile!
+### GitHub Stats
 
-I’m always open to collaboration, freelance projects, and tech discussions—feel free to reach out!
+![Abhinav's GitHub Stats](https://github-readme-stats.vercel.app/api?username=abhinavpadige4&show_icons=true&theme=default&hide_border=true)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=abhinavpadige4&layout=compact&theme=default&hide_border=true)
+
+---
+
+**Always learning, building, and experimenting. 🚀**
